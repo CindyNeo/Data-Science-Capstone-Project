@@ -1,0 +1,40 @@
+---
+title: "Text Prediction App"
+author: "Cindy Neo"
+date: "06 May 2024"
+output: slidy_presentation
+---
+
+## A Shiny Project
+
+A shiny project is a directory containing at least two files:
+
+-   ui.R (for user interface) to control how the app looks
+
+-   server.R to control what the app does
+
+-   The files for the shiny app is available on GitHub: <https://github.com/CindyNeo/Data-Science-Capstone-Project/tree/main/PredictiveTextApp>
+
+## Introduction
+
+The dataset used for building the shiny app can be downloaded from <https://d396qusza40orc.cloudfront.net/dsscapstone/dataset/Coursera-SwiftKey.zip>.
+
+The aim of this app is to predict the next three words that a user is likely to enter based on some input text. The prediction model used for the app is developed using the Stupid Backoff Text Predictor.
+
+## What is Stupid Backoff Text Predictor?
+
+The Stupid Backoff Text Predictor is an approach used in natural language processing (NLP) to predict the next most probable word when there is insufficient data or information available. Here's how it works:
+
+1.  Trigram Model: Suppose we are using a trigram model to estimate the probability of a sentence, such as "the sky is cloudy today." Trigram models consider the context of the last two words to predict the next word. However, if we don't have enough data to estimate the probability of "sky is cloudy today" using the trigram model, we encounter a problem.
+
+2.  Backoff Strategy: In such cases, we "back off" to a simpler model, like a bigram model. A bigram model only considers the context of the last word to predict the next word. So, instead of estimating the probability of the entire phrase "sky is cloudy today," we estimate the probability of "is cloudy today" using the bigram model.
+
+3.  Improving Accuracy: By using this backoff strategy, we can still estimate the probability of a sequence of words even when we lack sufficient data for higher-order models. It helps improve the accuracy of NLP applications by gracefully handling situations where more complex models fail due to limited training data.
+
+In summary, the Stupid Backoff Text Predictor allows NLP systems to make reasonable predictions even when faced with incomplete information.
+
+## Link to Shiny App
+
+-   Here's the link to view the Shiny App: <https://cindyneo.shinyapps.io/PredictiveTextApp/>
+
+-   Thank you!
